@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="{{ page.locale }}">
+<head>
+  <meta charset="UTF-8" />
+  <title>{{ page.title }}</title>
+  <link rel="stylesheet" type="text/css" media="all" href="/css/style.css" />
+  <link rel='index' title='Etheryl' href='http://www.etheryl.com/{{ page.locale }}/' />
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+  <script>
+    jQuery(document).ready(function() {
+      jQuery('#menu-home-menu li a[href $= "' + document.location.pathname + '"]').parent().addClass('current-menu-item page_item current_page_item');
+    });
+  </script>
+</head>
+
+<body class="{{ page.class }} page page-id-2 page-template page-template-homepage-php">
+  <div id="wrapper" class="hfeed">
+    <div id="header">
+      <div id="flag">
+        {% if page.locale == 'fr' %}
+          <a href="/en">English version <img src="/images/uk.jpg" alt="" /></a>
+        {% elsif page.locale == 'en' %}
+          <a href="/fr">Version française <img src="/images/fr.jpg" alt="" /></a>
+        {% endif %}
+      </div>
+      <img src="/images/logoside.jpg" alt="" id="logoside" />
+      <div id="masthead">
+        {% include header.html %}
+        {% include nav.html %}
+      </div>
+    </div>
+
+    <div id="main">
+      <div id="container" class="one-column {{ page.class2 }}">
+        <div id="content">
+          <div id="menu-baseline">{{ page.header }}</div>
+          <div id="page-baseline">{{ page.subheader }}</div>
+          {{ content }}
+        </div>
+      </div>
+    </div>
+    <div id="footer"></div>
+  </div>
+
+  <!-- Google Analytics -->
+  <script type="text/javascript">
+  var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+  document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+  var pageTracker = _gat._getTracker("UA-22293893-1");
+  pageTracker._trackPageview();
+  </script>
+  <!-- Google Analytics end -->
+
+</body>
+</html>

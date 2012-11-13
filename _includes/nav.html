@@ -1,0 +1,16 @@
+<div id="access">
+  <div class="menu-header">
+    <ul id="menu-home-menu" class="menu">
+      {% if page.locale == 'fr' %}
+        {% assign nav_links = site.navigation.fr %}
+      {% else %}
+        {% assign nav_links = site.navigation.en %}
+      {% endif %}
+      {% for link in nav_links %}
+        <li id="{{ link.id }}" class="menu-item menu-item-type-post_type menu-item-object-page">
+          <a href="/{{ page.locale }}/{{ link.url }}">{{ link.text }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
