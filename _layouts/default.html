@@ -14,6 +14,39 @@
 </head>
 
 <body class="{{ page.class }} page page-id-2 page-template page-template-homepage-php">
+  <style>
+  #wrapper {
+    margin-top: 100px;
+  }
+  #sonetin {
+    display: block;
+    border-bottom: 3px solid #514F58;
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+    text-decoration: none;
+    background: #4A96D2;
+    font-size: 20px;
+    line-height: 32px;  
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    box-shadow: #4A96D2 0 0 5px;
+    text-shadow: #4A96D2 1px 1px 1px;
+  }
+  #sonetin::after {
+    content: '➥';
+    font-size: 60px;
+    position: absolute;
+    right: 20px;
+    text-shadow: #4A96D2 0 0 5px;
+  }
+  </style>
+  <a id="sonetin" href="http://sonetin.com" title="SonetIN - Social Network Intelligence">
+    <span style="font-variant: small-caps; text-decoration: underline;">News:</span> Etheryl has been acquired by <span style="text-decoration: underline;">SonetIN</span>
+  </a>
   <div id="wrapper" class="hfeed">
     <div id="header">
       <div id="flag">
